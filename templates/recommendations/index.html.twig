@@ -1,0 +1,126 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}LinkedIn Recommendations{% endblock %}
+
+{% block body %}
+
+    <section id="testimonials" class="testimonials section-bg">
+        <div class="container">
+            <div class="mb-8 p-4">
+                    {% block bread %}
+                        → <a href="{{ path('app_profile') }}">Profile</a> → Recommendations
+                    {% endblock %}
+                <h2 class="mt-4">
+                    Check out what others are saying about my work:
+                </h2>
+            </div>
+
+            <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+                <div class="swiper-wrapper">
+                    {% for recommendation in recommendations %}
+                        <div class="swiper-slide">
+                            <div class="testimonial-item mt-4" data-aos="fade-up">
+                                <p>
+                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                    {{ recommendation.recommendation }}
+                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                </p>
+                                <img src="{{ asset(recommendation.image) }}" class="testimonial-img" alt="{{ recommendation.name }}">
+                                <h3>{{ recommendation.name }}</h3>
+                                <h4>{{ recommendation.position }}</h4>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- Add Navigation -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </section>
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper('.testimonials-slider', {
+            loop: true,
+            slidesPerView: 1,
+            spaceBetween: 30,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {#    <!-- ======= Recommendations Section ======= -->#}
+{#    <section id="testimonials" class="testimonials section-bg">#}
+{#        <div class="container">#}
+{#            <div class="section-title">#}
+{#                <h2>{% block bread %}#}
+{#                        → <a href="{{ path('app_profile') }}">Profile</a> → Recommendations#}
+{#                    {% endblock %}#}
+{#                </h2>#}
+{#                <h3>#}
+{#                    <p>#}
+{#                        Check out what others are saying about my work:#}
+{#                    </p>#}
+{#                </h3>#}
+{#            </div>#}
+
+{#            <div class="swiper-container">#}
+{#                <div class="swiper-wrapper">#}
+{#                    {% for recommendation in recommendations %}#}
+{#                        <div class="swiper-slide">#}
+{#                            <div class="testimonial-item mt-4" data-aos="fade-up">#}
+{#                                <p>#}
+{#                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>#}
+{#                                    {{ recommendation.recommendation }}#}
+{#                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>#}
+{#                                </p>#}
+{#                                <img src="{{ asset(recommendation.image) }}" class="testimonial-img" alt="{{ recommendation.name }}">#}
+{#                                <h3>{{ recommendation.name }}</h3>#}
+{#                                <h4>{{ recommendation.position }}</h4>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    {% endfor %}#}
+{#                </div>#}
+{#                <!-- Add Pagination -->#}
+{#                <div class="swiper-pagination"></div>#}
+{#                <!-- Add Navigation -->#}
+{#                <div class="swiper-button-next"></div>#}
+{#                <div class="swiper-button-prev"></div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </section><!-- End Testimonials Section -->#}
+
+{#    <script>#}
+{#        var swiper = new Swiper('.swiper-container', {#}
+{#            loop: true,#}
+{#            pagination: {#}
+{#                el: '.swiper-pagination',#}
+{#                clickable: true,#}
+{#            },#}
+{#            navigation: {#}
+{#                nextEl: '.swiper-button-next',#}
+{#                prevEl: '.swiper-button-prev',#}
+{#            },#}
+{#        });#}
+{#    </script>#}
+{% endblock %}

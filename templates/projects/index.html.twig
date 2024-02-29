@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Portfolio{% endblock %}
+
+{% block body %}
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio section-bg">
+        <div class="container">
+
+            <div class="mb-8 p-4">
+                {% block bread %}
+                    → <a href="{{ path('app_profile') }}">Profile</a> → Portfolio
+                {% endblock %}
+            </div>
+
+            <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                    <div class="portfolio-wrap">
+                        <div>
+                            {{ project.title }}
+                        </div>
+                        <img src="{{ asset('assets/img/portfolio/portfolio-1.jpg') }}" class="img-fluid" alt="">
+                        <div class="portfolio-links">
+                            <a href="{{ asset('assets/img/portfolio/portfolio-1.jpg') }}"
+                               data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i
+                                        class="bx bx-plus"></i>
+                            </a>
+                            <a href="{{ path('app_projects_show', { project: project.id }) }}" title="More Details"><i
+                                        class="bx bx-link"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- End Portfolio Section -->
+
+{% endblock %}

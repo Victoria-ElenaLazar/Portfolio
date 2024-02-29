@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact me!{% endblock %}
+
+{% block body %}
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="mb-8 p-4">
+                {% block bread %}
+                    → <a href="{{ path('app_profile') }}">Profile</a> → Contact
+                {% endblock %}
+            </div>
+
+            <div class="row" data-aos="fade-in">
+                <div class="col-lg-5 d-flex align-items-stretch">
+                    <div class="info">
+                        <div class="address">
+                            <i class="bi bi-geo-alt"></i>
+                            <h4>Location:</h4>
+                            <p>{{ contact.location }}</p>
+                        </div>
+
+                        <div class="email">
+                            <i class="bi bi-envelope"></i>
+                            <h4>Email:</h4>
+                            <p>{{ contact.email }}</p>
+                        </div>
+
+                        <div class="phone">
+                            <i class="bi bi-phone"></i>
+                            <h4>Call:</h4>
+                            <p>{{ contact.phone }}</p>
+                        </div>
+
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d90386.
+                            12641561907!2d25.927491691008804!3d44.93215152361023!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.
+                            1!3m3!1m2!1s0x40b249f6a8d6eff7%3A0xb3fe6965e659119!2zUGxvaWXImXRp!5e0!3m2!1sro!2sro!4v1709210153571!5m2!1sro!2sro"
+                                width="430"
+                                height="300"
+                                style="border:0;"
+                                allowfullscreen=""
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade">
+
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="col-lg-7 d-flex align-items-stretch">
+                    <aside>
+                        <p class="mt-4 text-medium mb-4">
+                            Hello there! 🌟
+                            I'm excited to connect with you!
+                            Whether you have questions about opportunities, want to discuss potential collaborations,
+                            or simply want to say hello, I'm all ears! Here are my contact details.
+                        </p>
+                    </aside>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- End Contact Section -->
+{% endblock %}

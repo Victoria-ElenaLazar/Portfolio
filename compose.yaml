@@ -1,0 +1,25 @@
+version: '3.1'
+services:
+  database:
+    image: 'mariadb:10.8.3'
+    container_name: portfolio_mariadb
+#    working_dir: /application
+#    volumes:
+#      - '.:/application'
+    environment:
+      - 'MYSQL_ROOT_PASSWORD=${MARIADB_ROOT_USER_PASSWORD}'
+      - 'MYSQL_DATABASE=${MARIADB_DATABASE}'
+      - 'MYSQL_USER=${MARIADB_USERNAME}'
+      - 'MYSQL_PASSWORD=${MARIADB_PASSWORD}'
+    ports:
+      - '3306:3306'
+  phpmyadmin:
+    image: 'phpmyadmin/phpmyadmin:latest'
+    container_name: portfolio_phpmyadmin
+    ports:
+      - '8001:80'
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=portfolio_mariadb
+
+

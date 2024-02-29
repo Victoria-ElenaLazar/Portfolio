@@ -1,0 +1,57 @@
+{% extends('base.html.twig') %}
+{% block body %}
+<!-- ======= Portfolio Details Section ======= -->
+
+
+<section id="portfolio-details" class="portfolio-details">
+    <div class="container">
+        <div class="section-title text-xs">
+            <h2>{% block bread %}
+                    → <a href="{{ path('app_profile') }}">Profile</a><a href="{{ path('app_projects') }}"> → Portfolio</a> → {{ project.title }}
+                {% endblock %}</h2>
+        </div>
+        <div class="row gy-4">
+
+            <div class="col-lg-8">
+                <div class="portfolio-details-slider swiper">
+                    <div class="swiper-wrapper align-items-center">
+
+                        <div class="video-container">
+                            <video controls width="800" height="400">
+                                <source src="{{ asset('uploads/videos/OLP.mp4') }}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+
+
+
+            <div class="col-lg-4">
+                <div class="portfolio-info">
+                    <h3>Project information</h3>
+                    <ul>
+                        <li><strong>Category</strong>: Web Application</li>
+                        <li><strong>Framework</strong>: Symfony</li>
+                        <li><strong>Project date</strong>: Nov 2023</li>
+                        <li><strong>Project URL</strong>: <a href="https://github.com/Victoria-ElenaLazar/Online-Learning-Platform">
+                                https://github.com/Victoria-ElenaLazar/Online-Learning-Platform
+                            </a></li>
+                    </ul>
+                </div>
+                <div class="portfolio-description">
+                    <h2>Description</h2>
+                    <p>
+                        {{ project.description }}
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section><!-- End Portfolio Details Section -->
+{% endblock %}
