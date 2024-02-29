@@ -26,6 +26,18 @@ class Projects
     #[ORM\ManyToOne(inversedBy: 'projects')]
     private ?Profile $profile = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $category = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $framework = null;
+
+    #[ORM\Column( nullable: true)]
+    private ?string $projectDate = null;
+
+    #[ORM\Column(length: 500, nullable: true)]
+    private ?string $projectLink = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -75,6 +87,54 @@ class Projects
     public function setProfile(?Profile $profile): static
     {
         $this->profile = $profile;
+
+        return $this;
+    }
+
+    public function getCategory(): ?string
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?string $category): static
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
+    public function getFramework(): ?string
+    {
+        return $this->framework;
+    }
+
+    public function setFramework(?string $framework): static
+    {
+        $this->framework = $framework;
+
+        return $this;
+    }
+
+    public function getProjectDate(): ?string
+    {
+        return $this->projectDate;
+    }
+
+    public function setProjectDate(?string $projectDate): static
+    {
+        $this->projectDate = $projectDate;
+
+        return $this;
+    }
+
+    public function getProjectLink(): ?string
+    {
+        return $this->projectLink;
+    }
+
+    public function setProjectLink(?string $projectLink): static
+    {
+        $this->projectLink = $projectLink;
 
         return $this;
     }

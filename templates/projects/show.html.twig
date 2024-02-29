@@ -5,10 +5,10 @@
 
 <section id="portfolio-details" class="portfolio-details">
     <div class="container">
-        <div class="section-title text-xs">
-            <h2>{% block bread %}
+        <div class="mb-8 p-4">
+            {% block bread %}
                     → <a href="{{ path('app_profile') }}">Profile</a><a href="{{ path('app_projects') }}"> → Portfolio</a> → {{ project.title }}
-                {% endblock %}</h2>
+            {% endblock %}
         </div>
         <div class="row gy-4">
 
@@ -19,7 +19,6 @@
                         <div class="video-container">
                             <video controls width="800" height="400">
                                 <source src="{{ asset('uploads/videos/OLP.mp4') }}" type="video/mp4">
-                                Your browser does not support the video tag.
                             </video>
                         </div>
 
@@ -27,8 +26,6 @@
                     <div class="swiper-pagination"></div>
                 </div>
             </div>
-
-
 
             <div class="col-lg-4">
                 <div class="portfolio-info">
