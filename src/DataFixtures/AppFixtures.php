@@ -101,7 +101,7 @@ class AppFixtures extends Fixture
                                            Additionally, the platform features a comprehensive admin panel, 
                                            granting administrators the authority to efficiently manage courses, lessons, enrollments, and course completions. 
                                            This centralized control ensures smooth operations and enhances the overall user experience.");
-        $project->setVideo('uploads/videos/OLP.mp4');
+        $project->setVideo('uploads/videos/OLP.mov');
         $project->setProjectImage('uploads/projects-images/olp.PNG');
         $manager->persist($project);
 
@@ -116,7 +116,7 @@ class AppFixtures extends Fixture
                                              Engage with a vibrant community by adding comments to others' posts and personalize your profile 
                                              with a profile picture and personal details. Furthermore, users have the ability to connect with others,
                                               follow their updates, and discover a stream of engaging posts from their network.");
-        $project1->setVideo('uploads/videos/Micro-Posts.mp4');
+        $project1->setVideo('uploads/videos/Micro-Posts.mov');
         $project1->setProjectImage('uploads/projects-images/posts.JPG');
 
         $manager->persist($project1);
@@ -134,7 +134,7 @@ class AppFixtures extends Fixture
                                              For job seekers, the platform offers a user-friendly interface to browse job listings, 
                                              apply with ease, and showcase their skills with salary expectations and CV uploads. 
                                              ");
-        $project2->setVideo('uploads/videos/job-board.mp4');
+        $project2->setVideo('uploads/videos/job-board.mov');
         $project2->setProjectImage('uploads/projects-images/jobs.PNG');
 
         $manager->persist($project2);
@@ -152,7 +152,7 @@ class AppFixtures extends Fixture
                                             Stay informed and connected with the integrated email notification system, ensuring all stakeholders are kept up-to-date with the latest event details.
                                             Security is paramount, and the system includes robust features to safeguard your data and ensure a smooth, worry-free experience. 
                                             ");
-        $project3->setVideo('uploads/videos/event-management.mp4');
+        $project3->setVideo('uploads/videos/event-management.mov');
         $project3->setProjectImage('uploads/projects-images/events.PNG');
 
         $manager->persist($project3);
@@ -170,7 +170,7 @@ class AppFixtures extends Fixture
                                             utilizing Slim Framework, Docker, and the ORM Doctrine. 
                                             This immersive learning experience not only equipped me with the technical skills to build robust APIs, 
                                             but also provided valuable insights into effective API design and implementation.");
-        $project4->setVideo('uploads/videos/payment-api.mp4');
+        $project4->setVideo('uploads/videos/payment-api.mov');
         $project4->setProjectImage('uploads/projects-images/payment.PNG');
 
         $manager->persist($project4);
@@ -186,7 +186,7 @@ class AppFixtures extends Fixture
                                             Through this project, I gained invaluable insights into the world of REST API development using the Slim Framework. 
                                             It was an enriching experience that not only deepened my understanding but also honed my skills in creating and 
                                             utilizing powerful APIs.");
-        $project5->setVideo('uploads/videos/movie-details.mp4');
+        $project5->setVideo('uploads/videos/movie-details.mov');
         $project5->setProjectImage('uploads/projects-images/movies.PNG');
 
         $manager->persist($project5);
