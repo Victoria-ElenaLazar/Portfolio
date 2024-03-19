@@ -18,7 +18,7 @@ class ResumeController extends AbstractController
         $profile = $resume->getProfile();
 
         return $this->render('resume/index.html.twig', [
-            'resume' => $resumeRepository->find(2),
+            'resume' => $resumeRepository->find(1),
             'profile' => $profile,
         ]);
     }
