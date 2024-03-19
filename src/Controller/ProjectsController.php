@@ -17,43 +17,12 @@ use Symfony\Component\String\Slugger\SluggerInterface;
 class ProjectsController extends AbstractController
 {
     #[Route('/portfolio', name: 'app_projects')]
-    public function index(Request $request,
-                          SluggerInterface $slugger,
-                          Profile $profile,
-                          ProfileRepository $profileRepository,
-                          Projects $project,
-                          ProjectsRepository $projects): Response
+    public function index(Projects $projects,
+                          ProjectsRepository $project): Response
     {
-//        $profileRepository->findBy(['name' => 'Victoria-Elena Lazar']);
-//        $profileRepository->getProfileInfo();
-//        $image = $profile->getImage();
-        $profile = $project->getProfile();
-
-        $form = $this->createForm(ProjectsType::class);
-
-        if ($form->isSubmitted() && $form->isValid()){
-            $projectVideo = $form->get('video')->getData();
-            if ($projectVideo){
-                $originalFileName = pathinfo($projectVideo->GetClientOriginalName(), PATHINFO_FILENAME);
-                $safeFileName = $slugger->slug($originalFileName);
-                $newFileName = $safeFileName . '-' . uniqid() . '.' . $projectVideo->guessExtension();
-            }
-            try {
-                $projectVideo->move($this->getParameter('videos_directory'), $newFileName);
-            }catch (FileException $exception){
-                echo "Failed to upload your video: " . $exception->getMessage();
-            }
-            $project->setVideo($newFileName);
-            $projects->add($project, true);
-            $this->addFlash('success', 'Your profile image was updated.');
-            return $this->redirectToRoute('app_projects');
-
-        }
-
-        $form->handleRequest($request);
+        $profile = $projects->getProfile();
         return $this->render('projects/index.html.twig', [
-            'form' => $form->createView(),
-            'project' => $projects->find(5),
+            'project' => $project->findAll(),
             'profile' => $profile,
 
         ]);

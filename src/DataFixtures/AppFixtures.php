@@ -87,11 +87,11 @@ class AppFixtures extends Fixture
 
         $project = new Projects();
         $project->setTitle('Online Learning Platform');
-        $project->setCategory('Webb Application');
+        $project->setCategory('Web Application');
         $project->setFramework('Symfony');
         $project->setProjectDate('Nov 2023');
         $project->setProjectLink('https://github.com/Victoria-ElenaLazar/Online-Learning-Platform');
-        $project->setDescription("Online Learning Platform -> a dynamic educational hub crafted with Symfony framework and Docker technology. 
+        $project->setDescription("Online Learning Platform → a dynamic educational hub crafted with Symfony framework and Docker technology. 
                                            Designed with both students and instructors in mind, the platform offers an intuitive interface 
                                            where learners can easily enroll in courses and progress through engaging lessons.
                                            The student-centric approach ensures that only authenticated users have access to course materials, 
@@ -102,36 +102,41 @@ class AppFixtures extends Fixture
                                            granting administrators the authority to efficiently manage courses, lessons, enrollments, and course completions. 
                                            This centralized control ensures smooth operations and enhances the overall user experience.");
         $project->setVideo('uploads/videos/OLP.mp4');
+        $project->setProjectImage('uploads/projects-images/olp.PNG');
         $manager->persist($project);
 
         $project1 = new Projects();
         $project1->setTitle('Micro Posts');
-        $project1->setCategory('Webb Application');
+        $project1->setCategory('Web Application');
         $project1->setFramework('Symfony');
         $project1->setProjectDate('Dec 2023');
         $project1->setProjectLink('https://github.com/Victoria-ElenaLazar/MicroPosts/tree/master');
-        $project1->setDescription("Micro Posts -> a robust application developed using the Symfony framework and Docker technology. 
+        $project1->setDescription("Micro Posts → a robust application developed using the Symfony framework and Docker technology. 
                                             This platform empowers users to create accounts, verify their emails, and unleash their thoughts through creating posts.
                                              Engage with a vibrant community by adding comments to others' posts and personalize your profile 
                                              with a profile picture and personal details. Furthermore, users have the ability to connect with others,
                                               follow their updates, and discover a stream of engaging posts from their network.");
         $project1->setVideo('uploads/videos/Micro-Posts.mp4');
+        $project1->setProjectImage('uploads/projects-images/posts.JPG');
+
         $manager->persist($project1);
 
         $project2 = new Projects();
         $project2->setTitle('Job Board');
-        $project2->setCategory('Webb Application');
+        $project2->setCategory('Web Application');
         $project2->setFramework('Laravel');
         $project2->setProjectDate('Jan 2024');
         $project2->setProjectLink('https://github.com/Victoria-ElenaLazar/Job-Board');
 
-        $project2->setDescription("Job Board -> a powerful platform developed with Laravel, designed to streamline the job search process
+        $project2->setDescription("Job Board → a powerful platform developed with Laravel, designed to streamline the job search process
                                              for both employers and applicants. Employers can effortlessly post job openings, 
                                              efficiently manage applications, and find the best candidates for their positions.
                                              For job seekers, the platform offers a user-friendly interface to browse job listings, 
                                              apply with ease, and showcase their skills with salary expectations and CV uploads. 
                                              ");
         $project2->setVideo('uploads/videos/job-board.mp4');
+        $project2->setProjectImage('uploads/projects-images/jobs.PNG');
+
         $manager->persist($project2);
 
         $project3 = new Projects();
@@ -141,13 +146,15 @@ class AppFixtures extends Fixture
         $project3->setProjectDate('Dec 2023');
         $project3->setProjectLink('https://github.com/Victoria-ElenaLazar/Events_Management');
 
-        $project3->setDescription("Event Management System -> a sophisticated API built on the robust Laravel framework. 
+        $project3->setDescription("Event Management System → a sophisticated API built on the robust Laravel framework. 
                                             This comprehensive system offers a seamless experience for organizing and overseeing events with ease.
                                             With a focus on user-friendly CRUD operations, our system allows effortless creation, updating, and deletion of events. 
                                             Stay informed and connected with the integrated email notification system, ensuring all stakeholders are kept up-to-date with the latest event details.
                                             Security is paramount, and the system includes robust features to safeguard your data and ensure a smooth, worry-free experience. 
                                             ");
         $project3->setVideo('uploads/videos/event-management.mp4');
+        $project3->setProjectImage('uploads/projects-images/events.PNG');
+
         $manager->persist($project3);
 
         $project4 = new Projects();
@@ -155,29 +162,33 @@ class AppFixtures extends Fixture
         $project4->setCategory('REST API');
         $project4->setFramework('Slim');
         $project4->setProjectDate('Dec 2023');
-        $project4->setProjectLink('https://github.com/Victoria-ElenaLazar/Events_Management');
+        $project4->setProjectLink('https://github.com/Victoria-ElenaLazar/Payment_API');
 
-        $project4->setDescription("Payment API -> built on the versatile Slim Framework, offers comprehensive information on customers, 
+        $project4->setDescription("Payment API → built on the versatile Slim Framework, offers comprehensive information on customers, 
                                             their baskets, transactions, and available payment methods.
                                             Through this project, I delved into the intricacies of REST API development, 
                                             utilizing Slim Framework, Docker, and the ORM Doctrine. 
                                             This immersive learning experience not only equipped me with the technical skills to build robust APIs, 
                                             but also provided valuable insights into effective API design and implementation.");
         $project4->setVideo('uploads/videos/payment-api.mp4');
+        $project4->setProjectImage('uploads/projects-images/payment.PNG');
+
         $manager->persist($project4);
 
         $project5 = new Projects();
-        $project5->setTitle('Move Details-API');
+        $project5->setTitle('Movie Details-API');
         $project5->setCategory('REST API');
         $project5->setFramework('Slim');
         $project5->setProjectDate('Oct 2023');
         $project5->setProjectLink('https://github.com/Victoria-ElenaLazar/SlimAPI-MovieDetails');
 
-        $project5->setDescription("Movie Details-API -> gateway to a wealth of information about movies, offering details such as titles, genres, and much more.
+        $project5->setDescription("Movie Details-API → gateway to a wealth of information about movies, offering details such as titles, genres, and much more.
                                             Through this project, I gained invaluable insights into the world of REST API development using the Slim Framework. 
                                             It was an enriching experience that not only deepened my understanding but also honed my skills in creating and 
                                             utilizing powerful APIs.");
         $project5->setVideo('uploads/videos/movie-details.mp4');
+        $project5->setProjectImage('uploads/projects-images/movies.PNG');
+
         $manager->persist($project5);
 
         $recommendation = new Recommendations();

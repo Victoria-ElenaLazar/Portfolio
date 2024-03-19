@@ -1,6 +1,20 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Portfolio{% endblock %}
+{% block stylesheets %}
+    <style>
+        .portfolio-item {
+            display: flex;
+            align-items: center;
+        }
+        .portfolio-item img {
+            height: 200px; /* Set the desired height for your images */
+            width: auto; /* Maintain image aspect ratio */
+            object-fit: cover; /* Ensure the image covers the specified height */
+            margin-right: 10px; /* Optional: Add some space between images */
+        }
+    </style>
+{% endblock %}
 
 {% block body %}
     <!-- ======= Portfolio Section ======= -->
@@ -11,31 +25,37 @@
                 {% block bread %}
                     → <a href="{{ path('app_profile') }}">Profile</a> → Portfolio
                 {% endblock %}
+                <p class="mt-4 text-xl">
+                    Check out how my work looks like in these projects:
+                </p>
             </div>
 
             <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                    <div class="portfolio-wrap">
-                        <div>
-                            {{ project.title }}
-                        </div>
-                        <img src="{{ asset('assets/img/portfolio/portfolio-1.jpg') }}" class="img-fluid" alt="">
-                        <div class="portfolio-links">
-                            <a href="{{ asset('assets/img/portfolio/portfolio-1.jpg') }}"
-                               data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i
-                                        class="bx bx-plus"></i>
-                            </a>
-                            <a href="{{ path('app_projects_show', { project: project.id }) }}" title="More Details"><i
-                                        class="bx bx-link"></i>
-                            </a>
+                {% for project in project %}
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                        <div class="portfolio-wrap">
+                            <div class="mt-2 mb-2">
+                                {{ project.title }}
+                            </div>
+                            <img src="{{ project.ProjectImage }}" class="img-fluid" alt="">
+                            <div class="portfolio-links mt-4 mb-4">
+                                <a href="{{ project.ProjectImage }}"
+                                   data-gallery="portfolioGallery">image
+                                </a>
+                                <a href="{{ path('app_projects_show', { project: project.id }) }}" >details
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                {% endfor %}
+            </div>
+            <div>
+                <p class="text-sm">
+                    More on <a href="https://github.com/Victoria-ElenaLazar">GitHub</a>
+                </p>
             </div>
         </div>
     </section>
-
     <!-- End Portfolio Section -->
 
 {% endblock %}

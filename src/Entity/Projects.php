@@ -32,11 +32,13 @@ class Projects
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $framework = null;
 
-    #[ORM\Column( nullable: true)]
+    #[ORM\Column(name: 'project_date', nullable: true)]
     private ?string $projectDate = null;
 
-    #[ORM\Column(length: 500, nullable: true)]
+    #[ORM\Column(name: 'project_link',length: 500, nullable: true)]
     private ?string $projectLink = null;
+    #[ORM\Column(name: 'project_image',length: 225, nullable: true)]
+    private ?string $projectImage = null;
 
     public function getId(): ?int
     {
@@ -137,5 +139,15 @@ class Projects
         $this->projectLink = $projectLink;
 
         return $this;
+    }
+
+    public function getProjectImage(): ?string
+    {
+        return $this->projectImage;
+    }
+
+    public function setProjectImage(?string $projectImage): void
+    {
+        $this->projectImage = $projectImage;
     }
 }

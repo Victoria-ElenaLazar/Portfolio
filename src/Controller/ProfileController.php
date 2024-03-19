@@ -2,10 +2,8 @@
 
 namespace App\Controller;
 
-use App\Entity\Profile;
 use App\Form\ProfileType;
 use App\Repository\ProfileRepository;
-use App\Repository\ResumeRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\Request;
@@ -15,14 +13,13 @@ use Symfony\Component\String\Slugger\SluggerInterface;
 
 class ProfileController extends AbstractController
 {
-    #[Route('/profile', name: 'app_profile')]
+    #[Route('/', name: 'app_profile')]
     public function index(Request           $request,
                           SluggerInterface  $slugger,
-                          ProfileRepository $profiles,
-    ResumeRepository $resume): Response
+                          ProfileRepository $profiles
+    ): Response
     {
         $profile = $profiles->getProfileInfo();
-        $resume->find(1);
 
         $form = $this->createForm(ProfileType::class);
         $form->handleRequest($request);
@@ -44,7 +41,7 @@ class ProfileController extends AbstractController
                 } catch (FileException $exception) {
                     echo 'Failed to upload your profile picture: ' . $exception->getMessage();
                 }
-                $profiles->find(2);
+                $profiles->find(1);
                 $profile->setImage($newFileName);
                 $profiles->add($profile, true);
                 $this->addFlash('success', 'Your profile image was updated.');
@@ -57,7 +54,7 @@ class ProfileController extends AbstractController
             [
                 'form' => $form->createView(),
                 'profile' => $profile,
-                ]
+            ]
         );
     }
 
