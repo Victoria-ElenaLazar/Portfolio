@@ -2,6 +2,7 @@
 declare(strict_types=1);
 namespace App\Controller;
 
+
 use App\Entity\Resume;
 use App\Repository\ResumeRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -15,11 +16,10 @@ class ResumeController extends AbstractController
     #[Route('/resume', name: 'app_resume')]
     public function index(Resume $resume, ResumeRepository $resumeRepository): Response
     {
-        $profile = $resume->getProfile();
+        $resume = $resumeRepository->find(1);
 
         return $this->render('resume/index.html.twig', [
-            'resume' => $resumeRepository->find(1),
-            'profile' => $profile,
+            'resume' => $resume,
         ]);
     }
     #[Route('resume/download', name: 'app_resume_download')]

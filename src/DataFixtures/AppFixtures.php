@@ -27,7 +27,7 @@ class AppFixtures extends Fixture
                               Nature Admirer: There is nothing like the tranquility of nature to soothe the soul. 
                               Hiking trails, or simply enjoying a moment of quiet reflection in the great outdoors is where I find peace.
     ');
-        $profile->setImage('');
+        $profile->setImage('uploads/profiles/linkedin-profiler-65de0830390aa.jpg');
         $manager->persist($profile);
 
         $resume = new Resume();
@@ -39,49 +39,53 @@ class AppFixtures extends Fixture
                                      A staunch advocate, I am characterized by my idealism, principled approach, and a deep sense of responsibility. 
                                      Proficient in seamlessly blending analytical acumen with innovative problem-solving techniques, 
                                      coupled with adept time management skills and a strong sense of empathy.');
-        $resume->setSkills('Programming Languages/ Technologies:
-                                 • PHP
-                                 • HTML and CSS
-                                 • OOP/Design Patterns
-                                 • Bash Scripting
-                                 • JavaScript
-                                 Frameworks/Libraries
-                                 • Symfony
-                                 • Laravel
-                                 • Slim
-                                 • Bootstrap
-                                 Databases
-                                 • MySQL/MariaDB
-                                 Bug Tracking/Project Management Software/CVS/Build Automation:
+        $resume->setSkillProgramming("• PHP
+                                 ● HTML and CSS
+                                 ● OOP/Design Patterns
+                                 ● Bash Scripting
+                                 ● JavaScript");
+        $resume->setSkillFramework(" 
+                                 ● Symfony
+                                 ● Laravel
+                                 ● Slim
+                                 ● Bootstrap");
+        $resume->setSkillDb("● MySQL/MariaDB");
+        $resume->setSkillBug(" 
                                  ● XDebug
                                  ● Git
-                                 ● Docker
-                                 Others:
-                                 • Microsoft 365
-                                 • PostMan/Insomnia
-                                 Languages
+                                 ● Docker");
+        $resume->setSkillOther(" 
+                                 ● Microsoft 365
+                                 ● PostMan/Insomnia");
+        $resume->setSkillLanguage("
                                  ● English – Advanced
-                                 ● Romanian - Native');
-        $resume->setProfessionalExperience('Jagaad Academy (Remote) Duration: 7 months ( April 2023 – November 2023) 
-                                                             Role: PHP Backend internship Description: Gaining hands-on experience in server-side scripting with PHP, 
-                                                             developing web applications, and database management. 
-                                                             Achievements: ● Successfully developing and optimizing PHP scripts for web applications, 
-                                                             improving performance and reducing load times. 
-                                                             ● Troubleshooting and resolving technical issues and bugs in the backend code, 
-                                                             enhancing the reliability of the web application.
-                                                             ● Becoming one of the best 3 students of the program.
-                                                             ● Following code design principles to deliver high-quality code.
-                                                             ● Learning and applying security best practices to protect web applications from vulnerabilities 
-                                                             and threats
-                                                             Tools & Technologies: PHP 8, Slim Framework, Symfony, PHPStorm, VSCode, Insomnia, HTML, 
-                                                             CSS, Bootstrap, Docker, Swagger API Documentation, Unit Tests, Doctrine ORM, PHPStan, Firebase JWT, 
-                                                             Relational Database');
-        $resume->setEducation('Backend PHP software development
-                                       Jagaad Academy
-                                       Entrepreneurial, Financial and Juridic skills
-                                       INNOTECH- Student involved in the development of successful Start-ups
-                                       Public Administration
-                                       University of Bucharest');
+                                 ● Romanian - Native');");
+        $resume->setCompanyName("Jagaad Academy");
+        $resume->setCompanyLocation("Remote");
+        $resume->setCompanyDuration("April 2023 – November 2023 (7 months)");
+        $resume->setCompanyRole("PHP Backend internship");
+        $resume->setCompanyDescription("Gaining hands-on experience in server-side scripting with PHP, 
+                                                        developing web applications, and database management."
+        );
+        $resume->setCompanyAchievements(
+            "● Successfully developing and optimizing PHP scripts for web applications, 
+                                 improving performance and reducing load times. 
+                               ● Troubleshooting and resolving technical issues and bugs in the backend code, 
+                                 enhancing the reliability of the web application.
+                               ● Becoming one of the best 3 students of the program.
+                               ● Following code design principles to deliver high-quality code.
+                               ● Learning and applying security best practices to protect web applications from vulnerabilities 
+                                 and threats"
+        );
+        $resume->setCompanyTools(
+            "PHP 8, Slim Framework, Symfony, PHPStorm, VSCode, Insomnia, HTML, 
+                         CSS, Bootstrap, Docker, Swagger API Documentation, Unit Tests, Doctrine ORM, PHPStan, Firebase JWT, 
+                         Relational Database"
+        );
+        $resume->setEducationInstitute("University of Bucharest");
+        $resume->setEducationGraduation("Jun 2023");
+        $resume->setEducationTopic("Public Administration");
+
 
         $manager->persist($resume);
 

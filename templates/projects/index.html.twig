@@ -8,10 +8,10 @@
             align-items: center;
         }
         .portfolio-item img {
-            height: 200px; /* Set the desired height for your images */
-            width: auto; /* Maintain image aspect ratio */
-            object-fit: cover; /* Ensure the image covers the specified height */
-            margin-right: 10px; /* Optional: Add some space between images */
+            height: 200px;
+            width: auto;
+            object-fit: cover;
+            margin-right: 10px;
         }
     </style>
 {% endblock %}
@@ -38,11 +38,9 @@
                                 {{ project.title }}
                             </div>
                             <img src="{{ project.ProjectImage }}" class="img-fluid" alt="">
-                            <div class="portfolio-links mt-4 mb-4">
-                                <a href="{{ project.ProjectImage }}"
-                                   data-gallery="portfolioGallery">image
-                                </a>
-                                <a href="{{ path('app_projects_show', { project: project.id }) }}" >details
+                            <div class="portfolio-links mt-4 mb-4 position-absolute start-0 end-0">
+                                <a href="{{ path('app_projects_show', { project: project.id }) }}" class="btn-details w-100">
+                                    details
                                 </a>
                             </div>
                         </div>

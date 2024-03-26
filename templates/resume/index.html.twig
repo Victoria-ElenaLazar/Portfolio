@@ -23,7 +23,18 @@
                     <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
                         <h3 class="resume-title">Skills</h3>
                         <div class="resume-item pb-0">
-                            <p><em>{{ resume.skills }}</em></p>
+                            <h4>Programming Languages/ Technologies:</h4>
+                            <p><em>{{ resume.skillProgramming }}</em></p>
+                            <h4>Frameworks/Libraries:</h4>
+                            <p><em>{{ resume.skillFramework }}</em></p>
+                            <h4>Databases:</h4>
+                            <p><em>{{ resume.skillDb }}</em></p>
+                            <h4>Bug Tracking/Project Management Software/CVS/Build Automation:</h4>
+                            <p><em>{{ resume.skillBug }}</em></p>
+                            <h4>Others:</h4>
+                            <p><em>{{ resume.skillOther }}</em></p>
+                            <h4>Languages:</h4>
+                            <p><em>{{ resume.skillLanguage }}</em></p>
                         </div>
                     </div>
                 </div>
@@ -31,11 +42,27 @@
                 <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
                     <h3 class="resume-title">Professional Experience</h3>
                     <div class="resume-item pb-0">
-                        <p><em>{{ resume.professionalExperience }}</em></p>
+                        <h4>Company:</h4>
+                        <p><em>{{ resume.companyName }}</em></p>
+                        <h4>Duration:</h4>
+                        <p><em>{{ resume.companyDuration }}</em></p>
+                        <h4>Role:</h4>
+                        <p><em>{{ resume.companyRole }}</em></p>
+                        <h4>Description:</h4>
+                        <p><em>{{ resume.companyDescription }}</em></p>
+                        <h4>Achievements:</h4>
+                        <p><em>{{ resume.companyAchievements }}</em></p>
+                        <h4>Tools:</h4>
+                        <p><em>{{ resume.companyTools }}</em></p>
                     </div>
                     <h3 class="resume-title">Education</h3>
                     <div class="resume-item pb-0">
-                        <p><em>{{ resume.education }}</em></p>
+                        <h4>Educational Institution:</h4>
+                        <p><em>{{ resume.educationInstitute }}</em></p>
+                        <h4>Graduation:</h4>
+                        <p><em>{{ resume.educationGraduation }}</em></p>
+                        <h4>Filed of study:</h4>
+                        <p><em>{{ resume.educationTopic }}</em></p>
                     </div>
                     <p>Download full resume <a href="{{ path('app_resume_download') }}" target="_blank">here</a></p>
                 </div>
