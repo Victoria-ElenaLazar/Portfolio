@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Entity\Profile;
+
 use App\Repository\ProfileRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;

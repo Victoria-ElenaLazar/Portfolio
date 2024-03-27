@@ -2,17 +2,11 @@
 
 namespace App\Controller;
 
-use App\Entity\Profile;
 use App\Entity\Projects;
-use App\Form\ProjectsType;
-use App\Repository\ProfileRepository;
 use App\Repository\ProjectsRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\File\Exception\FileException;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
-use Symfony\Component\String\Slugger\SluggerInterface;
 
 class ProjectsController extends AbstractController
 {

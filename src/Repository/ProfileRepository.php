@@ -3,7 +3,6 @@
 namespace App\Repository;
 
 use App\Entity\Profile;
-use App\Entity\UserProfile;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 

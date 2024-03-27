@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use App\Entity\Recommendations;
-use App\Repository\ProfileRepository;
 use App\Repository\RecommendationsRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
