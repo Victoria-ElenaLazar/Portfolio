@@ -5,4 +5,4 @@ controllers:
     type: attribute
 index:
     path: /resume
-    controller: App\Controller\YourController::index
+    controller: App\Controller\ResumeController::index
