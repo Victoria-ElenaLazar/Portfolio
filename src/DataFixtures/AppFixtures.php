@@ -31,6 +31,9 @@ class AppFixtures extends Fixture
         $manager->persist($profile);
 
         $resume = new Resume();
+        $resume->setSkills('test');
+        $resume->setProfessionalExperience('test');
+        $resume->setEducation('test');
         $resume->setSummary('A highly motivated and results-driven professional 
                                      with a diverse background spanning roles in PHP Backend internship, 
                                      assurance, and audit assistance, contributing to a well-rounded skill set and a comprehensive understanding of various domains. 

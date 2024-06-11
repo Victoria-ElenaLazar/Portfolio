@@ -61,6 +61,16 @@ class Resume
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $skillBug = null;
 
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $skills = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $professionalExperience = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $education = null;
+
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $skillOther = null;
 
@@ -285,5 +295,35 @@ class Resume
         $this->skillLanguage = $skillLanguage;
 
         return $this;
+    }
+
+    public function getSkills(): ?string
+    {
+        return $this->skills;
+    }
+
+    public function setSkills(?string $skills): void
+    {
+        $this->skills = $skills;
+    }
+
+    public function getProfessionalExperience(): ?string
+    {
+        return $this->professionalExperience;
+    }
+
+    public function setProfessionalExperience(?string $professionalExperience): void
+    {
+        $this->professionalExperience = $professionalExperience;
+    }
+
+    public function getEducation(): ?string
+    {
+        return $this->education;
+    }
+
+    public function setEducation(?string $education): void
+    {
+        $this->education = $education;
     }
 }
