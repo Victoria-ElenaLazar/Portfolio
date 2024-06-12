@@ -3,21 +3,3 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
-resume:
-    path: /resume
-    controller: App\Controller\ResumeController::index
-portfolio:
-    path: /portfolio
-    controller: App\Controller\ProjectsController::index
-show:
-    path: /portfolio/{project}
-    controller: App\Controller\ProjectsController::show
-profile:
-    path: /
-    controller: App\Controller\ProfileController::index
-recommendations:
-    path: /recommendations
-    controller: App\Controller\RecommendationsController::index
-contact:
-    path: /contact
-    controller: App\Controller\ContactController::index

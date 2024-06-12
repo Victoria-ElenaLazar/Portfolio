@@ -3,7 +3,6 @@ WORKDIR "/application"
 
 RUN apt-get update \
     && apt-get -y --no-install-recommends install \
-        php8.2-gd \
         php8.2-mysql \
         php8.2-xdebug \
     && apt-get clean \

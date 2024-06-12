@@ -94,6 +94,6 @@
     {% block body %}{% endblock %}
 
     {% block javascripts %}
-            {% block importmap %}{{ importmap('app') }}{% endblock %}
+        {% block importmap %}{{ importmap('app') }}{% endblock %}
         <script src="{{ asset('assets/js/nav.js') }}"></script>
     {% endblock %}
